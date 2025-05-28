@@ -14,7 +14,7 @@ export default function NewBlogPage() {
 
     await createPost({ title, content });
 
-    redirect("/blogs"); // 投稿後に一覧ページへ移動
+    redirect("/blogs"); 
   }
 
   return (

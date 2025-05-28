@@ -1,4 +1,5 @@
 import { blogsGet } from "@/data/blogsGet";
+import Link from "next/link";
 
 export default async function BlogPage() {
   const posts = await blogsGet();
@@ -13,6 +14,9 @@ export default async function BlogPage() {
           <p className="mt-1 text-sm text-gray-500">
             投稿日: {new Date(post.createdAt).toLocaleDateString()}
           </p>
+          <Link href={`/blogs/${post.id}`} className="text-blue-600 underline">
+            記事を読む
+          </Link>
         </div>
       ))}
     </div>
